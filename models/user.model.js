@@ -29,6 +29,12 @@ import mongoose from "mongoose";
         minLength: 6,
     },
 
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+
+
  }, {Timestamps: true} );
 
  const User = mongoose.model("User", userSchema);
