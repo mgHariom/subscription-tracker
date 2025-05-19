@@ -28,7 +28,7 @@ const subscriptionSchema = new mongoose.Schema({
     category: {
         type: String,
         required: [true, "Subscription category is required"],
-        enum: ["entertainment", "food", "sports", "Technology","others"],
+        enum: ["entertainment", "food", "sports", "Technology","others", "study"],
         default: "others",
     },
     paymentMethod: {
@@ -65,7 +65,7 @@ const subscriptionSchema = new mongoose.Schema({
         required: [true, "User is required"],
         index: true,
     },
-}, Options = {Timestamps: true} );
+}, {Timestamps: true} );
 
 //auto-calculate the renewal date
 subscriptionSchema.pre("save", function(next) {
